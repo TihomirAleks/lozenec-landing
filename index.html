@@ -3,178 +3,248 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lozenetz.bg</title>
-
+  <title>Lozenetz.bg — Early Access</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
-
   <style>
     body { font-family: Inter, sans-serif; }
     .serif { font-family: 'Playfair Display', serif; }
-
-    .source {
-      border: 1px solid #d1fae5;
-      background: white;
-      color: #065f46;
-      padding: 8px 12px;
-      border-radius: 8px;
-      text-align: center;
-      transition: all 0.2s ease;
-    }
-
-    .source:hover {
-      background: #ecfdf5;
-      transform: translateY(-1px);
-    }
-
-    .source.primary {
-      background: #064232;
-      color: #d1fae5;
-      border: none;
-    }
+    .brand-word { font-family: 'Playfair Display', serif; letter-spacing: .045em; }
+    .logo-gold { color: #b7a15a; }
   </style>
 </head>
+<body class="bg-[#fbfaf7] text-stone-950">
+  <main class="min-h-screen px-6">
+    <div class="mx-auto max-w-4xl">
 
-<body class="bg-[#fbfaf7] text-stone-900">
+      <!-- NAV -->
+      <nav class="flex items-center justify-between py-7">
+        <a href="#" class="flex items-center gap-3" aria-label="Lozenetz properties">
+          <svg width="42" height="42" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0">
+            <rect width="64" height="64" rx="13" fill="#064232"/>
+            <path d="M18 45V25.5H30.5V45" stroke="#8BD7BD" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M31 45V17H43.5V45" stroke="#8BD7BD" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22 45V35" stroke="#E7DFA9" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="45" cy="18" r="9" stroke="#D8C476" stroke-width="2"/>
+            <path d="M41 22C41.5 16 45 12.5 50 11" stroke="#D8C476" stroke-width="2" stroke-linecap="round"/>
+            <path d="M43.5 20.5C43 16.5 45 13.5 48.5 12" stroke="#8BD7BD" stroke-width="2" stroke-linecap="round"/>
+            <path d="M47 16.5C48.2 16.1 49.4 16.3 50.5 17" stroke="#8BD7BD" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          <div class="leading-none">
+            <div class="brand-word text-xl text-[#173d34]">LOZENETZ</div>
+            <div id="brandSub" class="mt-1 text-[10px] font-medium uppercase tracking-[0.42em] logo-gold">ИМОТИ</div>
+          </div>
+        </a>
 
-<main class="max-w-4xl mx-auto px-6 py-10">
+        <div class="flex rounded-full bg-stone-100 p-1 text-xs font-medium tracking-wide">
+          <button id="bgBtn" onclick="setLang('bg')" class="rounded-full bg-white px-3.5 py-1.5 text-stone-950 shadow-sm">BG</button>
+          <button id="enBtn" onclick="setLang('en')" class="rounded-full px-3.5 py-1.5 text-stone-500">EN</button>
+        </div>
+      </nav>
 
-<!-- NAV -->
-<div class="flex justify-between items-center mb-10">
-  <div class="serif text-lg">LOZENETZ</div>
-  <div>
-    <button onclick="setLang('bg')" class="mr-2">BG</button>
-    <button onclick="setLang('en')">EN</button>
-  </div>
-</div>
+      <!-- HERO -->
+      <section class="pb-16 pt-10 text-center md:pb-20 md:pt-16">
+        <div id="badge" class="mb-7 inline-block rounded-full border border-stone-200 px-4 py-1.5 text-xs tracking-wide text-stone-500">Очаквайте скоро</div>
+        <h1 id="title" class="serif mx-auto mb-5 max-w-3xl text-5xl font-light leading-[1.08] tracking-[-0.035em] md:text-7xl">Всички нови имоти в Лозенец. Едно място.</h1>
+        <p id="subtitle" class="mx-auto mb-9 max-w-xl text-base font-light leading-7 text-stone-600">Автоматично събираме обявите от 20+ сайта, премахваме дубликатите и ви показваме само новото — преди всички останали.</p>
 
-<!-- HERO -->
-<div class="text-center mb-16">
-  <div id="badge" class="text-xs text-stone-400 mb-4">Очаквайте скоро</div>
+        <form id="leadForm" class="mx-auto flex max-w-md flex-col gap-3">
+          <input id="email" type="email" required class="w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-sm outline-none placeholder:text-stone-400 focus:border-emerald-800 focus:ring-2 focus:ring-emerald-900/10" placeholder="Вашият имейл" />
+          <label class="flex items-start gap-2 text-left text-xs leading-5 text-stone-500">
+            <input id="consent" type="checkbox" required class="mt-1" />
+            <span id="consentText">Съгласявам се да получавам известия за старта на услугата и нови имоти. Мога да се отпиша по всяко време.</span>
+          </label>
+          <button type="submit" class="rounded-lg bg-emerald-950 px-5 py-3 text-sm font-medium text-emerald-50 hover:bg-emerald-900">
+            <span id="cta">Запиши ме за ранен достъп →</span>
+          </button>
+        </form>
+        <div id="successMessage" class="hidden mt-4 text-sm font-medium text-emerald-700">Благодарим! Ще ви уведомим при старт.</div>
+      </section>
 
-  <h1 id="title" class="serif text-5xl mb-4">
-    Всички нови имоти в Лозенец. Едно място.
-  </h1>
+      <!-- STATS -->
+      <section class="mb-20 grid overflow-hidden rounded-xl border border-stone-200 bg-stone-200 md:grid-cols-3">
+        <div class="bg-[#fbfaf7] px-5 py-7 text-center"><div class="serif mb-1.5 text-4xl font-light tracking-tight">€3,300</div><div id="stat1" class="text-xs uppercase tracking-[0.14em] text-stone-500">средна цена/м²</div></div>
+        <div class="bg-[#fbfaf7] px-5 py-7 text-center"><div class="serif mb-1.5 text-4xl font-light tracking-tight">20+</div><div id="stat2" class="text-xs uppercase tracking-[0.14em] text-stone-500">сайта с обяви</div></div>
+        <div class="bg-[#fbfaf7] px-5 py-7 text-center"><div class="serif mb-1.5 text-4xl font-light tracking-tight">1ч</div><div id="stat3" class="text-xs uppercase tracking-[0.14em] text-stone-500">преди останалите</div></div>
+      </section>
 
-  <p id="subtitle" class="text-stone-600 mb-6">
-    Получавайте новите обяви първи
-  </p>
+      <!-- WHAT IT IS -->
+      <section class="mb-20 text-center">
+        <h2 id="whatTitle" class="serif mb-5 text-4xl font-light tracking-tight">Какво е Lozenetz.bg?</h2>
+        <p id="whatText" class="mx-auto max-w-2xl text-base font-light leading-7 text-stone-600">Хиперлокална услуга за имоти в Лозенец. Вместо да проверявате десетки сайтове всеки ден, получавате една чиста, подредена и навременна картина на новите обяви в квартала.</p>
+      </section>
 
-  <form id="leadForm" class="max-w-md mx-auto space-y-3">
+      <!-- HOW IT WORKS -->
+      <section class="mb-20">
+        <h2 id="howTitle" class="serif mb-12 text-center text-4xl font-light tracking-tight">Как работи</h2>
+        <div class="grid gap-6 md:grid-cols-3">
+          <article class="border-t-2 border-emerald-600 px-1 py-6">
+            <div class="mb-3 text-xs font-medium tracking-[0.2em] text-emerald-700">01</div>
+            <h3 id="step1Title" class="serif mb-2 text-2xl">Събираме</h3>
+            <p id="step1Text" class="text-sm font-light leading-6 text-stone-600">Следим основните сайтове за имоти и агенции с активни обяви в Лозенец.</p>
+          </article>
+          <article class="border-t-2 border-emerald-600 px-1 py-6">
+            <div class="mb-3 text-xs font-medium tracking-[0.2em] text-emerald-700">02</div>
+            <h3 id="step2Title" class="serif mb-2 text-2xl">Филтрираме</h3>
+            <p id="step2Text" class="text-sm font-light leading-6 text-stone-600">Премахваме дублирани обяви, нормализираме данните и показваме ключовите параметри ясно.</p>
+          </article>
+          <article class="border-t-2 border-emerald-600 px-1 py-6">
+            <div class="mb-3 text-xs font-medium tracking-[0.2em] text-emerald-700">03</div>
+            <h3 id="step3Title" class="serif mb-2 text-2xl">Известяваме</h3>
+            <p id="step3Text" class="text-sm font-light leading-6 text-stone-600">Получавате навременни известия по имейл и други удобни канали, когато има нови подходящи обяви.</p>
+          </article>
+        </div>
+      </section>
 
-    <input id="email" type="email" required
-      class="w-full rounded-lg border px-4 py-3"
-      placeholder="Вашият имейл" />
+      <!-- SERVICES -->
+      <section class="mb-20 rounded-xl border border-stone-200 bg-white/40 px-6 py-10">
+        <h2 id="servicesTitle" class="serif mb-8 text-center text-4xl font-light tracking-tight">Какво ще включва услугата</h2>
+        <div class="grid gap-6 md:grid-cols-2">
+          <div><h3 id="service1Title" class="mb-2 font-medium text-emerald-950">Нови обяви</h3><p id="service1Text" class="text-sm font-light leading-6 text-stone-600">Подбран поток от нови продажби и наеми в Лозенец.</p></div>
+          <div><h3 id="service2Title" class="mb-2 font-medium text-emerald-950">Дедупликация</h3><p id="service2Text" class="text-sm font-light leading-6 text-stone-600">Една и съща обява няма да ви се показва пет пъти от различни сайтове.</p></div>
+          <div><h3 id="service3Title" class="mb-2 font-medium text-emerald-950">Известия</h3><p id="service3Text" class="text-sm font-light leading-6 text-stone-600">Ранни известия за нови обяви, които отговарят на интереса ви.</p></div>
+          <div><h3 id="service4Title" class="mb-2 font-medium text-emerald-950">Пазарен контекст</h3><p id="service4Text" class="text-sm font-light leading-6 text-stone-600">Цена на м², сравнение с квартала и ориентир дали офертата изглежда разумна.</p></div>
+        </div>
+      </section>
 
-    <label class="text-xs text-stone-500 flex gap-2">
-      <input id="consent" type="checkbox" required />
-      <span id="consentText">Съгласен съм да получавам известия</span>
-    </label>
+      <!-- SOURCES -->
+      <section class="mb-20 rounded-xl bg-stone-100 px-5 py-8 text-center">
+        <div id="sourcesTitle" class="mb-4 text-xs uppercase tracking-[0.18em] text-stone-400">Планирани източници за наблюдение</div>
+        <p id="sourcesIntro" class="mx-auto mb-7 max-w-2xl text-sm font-light leading-6 text-stone-600">Ще следим основните портали, агенции и директни сайтове, които публикуват имоти в Лозенец, за да получите по-пълна картина на пазара.</p>
+        <div class="grid gap-3 text-sm sm:grid-cols-2 md:grid-cols-3">
+          <span class="rounded-lg border border-emerald-100 bg-white px-3 py-2 text-emerald-900 shadow-sm hover:bg-emerald-50">imot.bg</span>
+          <span class="rounded-lg border border-emerald-100 bg-white px-3 py-2 text-emerald-900 shadow-sm hover:bg-emerald-50">imoti.net</span>
+          <span class="rounded-lg border border-emerald-100 bg-white px-3 py-2 text-emerald-900 shadow-sm hover:bg-emerald-50">address.bg</span>
+          <span class="rounded-lg border border-emerald-100 bg-white px-3 py-2 text-emerald-900 shadow-sm hover:bg-emerald-50">homes.bg</span>
+          <span class="rounded-lg border border-emerald-100 bg-white px-3 py-2 text-emerald-900 shadow-sm hover:bg-emerald-50">holmes.bg</span>
+          <span class="rounded-lg border border-emerald-100 bg-white px-3 py-2 text-emerald-900 shadow-sm hover:bg-emerald-50">yavlena.com</span>
+          <span class="rounded-lg border border-emerald-100 bg-white px-3 py-2 text-emerald-900 shadow-sm hover:bg-emerald-50">imoteka.bg</span>
+          <span class="rounded-lg border border-emerald-100 bg-white px-3 py-2 text-emerald-900 shadow-sm hover:bg-emerald-50">era.bg</span>
+          <span class="rounded-lg border border-emerald-100 bg-white px-3 py-2 text-emerald-900 shadow-sm hover:bg-emerald-50">suprimmo.net</span>
+          <span class="rounded-lg border border-emerald-100 bg-white px-3 py-2 text-emerald-900 shadow-sm hover:bg-emerald-50">property.bg</span>
+          <span class="rounded-lg border border-emerald-100 bg-white px-3 py-2 text-emerald-900 shadow-sm hover:bg-emerald-50">olx.bg</span>
+          <span class="rounded-lg border border-emerald-100 bg-white px-3 py-2 text-emerald-900 shadow-sm hover:bg-emerald-50">bazar.bg</span>
+          <span class="rounded-lg border border-emerald-100 bg-white px-3 py-2 text-emerald-900 shadow-sm hover:bg-emerald-50">realestates.bg</span>
+          <span class="rounded-lg border border-emerald-100 bg-white px-3 py-2 text-emerald-900 shadow-sm hover:bg-emerald-50">imoti.bg</span>
+          <span class="rounded-lg border border-emerald-100 bg-white px-3 py-2 text-emerald-900 shadow-sm hover:bg-emerald-50">indomio.bg</span>
+          <span class="rounded-lg border border-emerald-100 bg-white px-3 py-2 text-emerald-900 shadow-sm hover:bg-emerald-50">luximmo.com</span>
+          <span class="rounded-lg border border-emerald-100 bg-white px-3 py-2 text-emerald-900 shadow-sm hover:bg-emerald-50">bulgarianproperties.com</span>
+          <span class="rounded-lg border border-emerald-100 bg-white px-3 py-2 text-emerald-900 shadow-sm hover:bg-emerald-50">topimot.com</span>
+          <span class="rounded-lg border border-emerald-100 bg-white px-3 py-2 text-emerald-900 shadow-sm hover:bg-emerald-50">realistimo.com</span>
+          <span class="rounded-lg border border-emerald-100 bg-white px-3 py-2 text-emerald-900 shadow-sm hover:bg-emerald-50">arcoreal.com</span>
+          <span class="rounded-lg border border-emerald-100 bg-white px-3 py-2 text-emerald-900 shadow-sm hover:bg-emerald-50">forton.bg</span>
+          <span class="rounded-lg border border-emerald-100 bg-white px-3 py-2 text-emerald-900 shadow-sm hover:bg-emerald-50">mirela.bg</span>
+        </div>
+      </section>
 
-    <button class="w-full bg-emerald-900 text-white py-3 rounded-lg">
-      <span id="cta">Запиши ме за ранен достъп →</span>
-    </button>
+      <!-- MAP -->
+      <section class="mb-20 overflow-hidden rounded-2xl border border-stone-200 bg-white/60 shadow-sm">
+        <div class="px-6 py-10 text-center">
+          <h2 id="mapTitle" class="serif mb-3 text-4xl font-light tracking-tight text-emerald-950">Фокус: Лозенец</h2>
+          <p id="mapText" class="mx-auto max-w-2xl text-sm font-light leading-6 text-stone-600">Ясно дефинирана зона в Лозенец — за да виждате само релевантните обяви, без шум.</p>
+        </div>
+        <div class="h-[420px] w-full overflow-hidden">
+          <iframe
+            title="Lozenets map"
+            class="h-full w-full border-0"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=23.3000%2C42.6650%2C23.3400%2C42.6900&layer=mapnik&marker=42.6755%2C23.3190">
+          </iframe>
+        </div>
+      </section>
 
-  </form>
+      <!-- FAQ -->
+      <section class="mx-auto mb-20 max-w-2xl">
+        <h2 id="faqTitle" class="serif mb-10 text-center text-4xl font-light tracking-tight">Въпроси</h2>
+        <div class="faq-item border-b border-stone-200">
+          <button class="faq-toggle flex w-full items-center justify-between gap-4 py-5 text-left text-base" aria-expanded="false"><span id="faq1Q">Какво точно прави Lozenetz.bg?</span><span class="faq-plus text-2xl leading-none text-stone-400 transition-transform">+</span></button>
+          <div id="faq1A" class="faq-answer hidden pb-5 text-sm font-light leading-6 text-stone-600">Събира новите обяви за имоти в Лозенец от множество източници и ги подрежда на едно място.</div>
+        </div>
+        <div class="faq-item border-b border-stone-200">
+          <button class="faq-toggle flex w-full items-center justify-between gap-4 py-5 text-left text-base" aria-expanded="false"><span id="faq2Q">Кога стартира услугата?</span><span class="faq-plus text-2xl leading-none text-stone-400 transition-transform">+</span></button>
+          <div id="faq2A" class="faq-answer hidden pb-5 text-sm font-light leading-6 text-stone-600">В момента подготвяме ранния достъп. Записаните потребители ще бъдат уведомени първи.</div>
+        </div>
+        <div class="faq-item border-b border-stone-200">
+          <button class="faq-toggle flex w-full items-center justify-between gap-4 py-5 text-left text-base" aria-expanded="false"><span id="faq3Q">Ще има ли известия?</span><span class="faq-plus text-2xl leading-none text-stone-400 transition-transform">+</span></button>
+          <div id="faq3A" class="faq-answer hidden pb-5 text-sm font-light leading-6 text-stone-600">Да — идеята е да получавате навременни известия по имейл и други удобни канали, без да проверявате ръчно десетки сайтове.</div>
+        </div>
+      </section>
 
-  <div id="successMessage" class="hidden mt-4 text-emerald-700">
-    Благодарим!
-  </div>
-</div>
-
-<!-- MAP -->
-<div class="mb-16 border rounded-2xl overflow-hidden">
-  <div class="text-center py-6">
-    <h2 class="serif text-3xl mb-2">Фокус: Лозенец</h2>
-    <p class="text-sm text-stone-500">
-      Само релевантни обяви в квартала
-    </p>
-  </div>
-
-  <iframe
-    class="w-full h-[500px]"
-    src="https://www.openstreetmap.org/export/embed.html?bbox=23.3000%2C42.6650%2C23.3400%2C42.6900&layer=mapnik&marker=42.6755%2C23.3190">
-  </iframe>
-</div>
-
-<!-- SOURCES -->
-<div class="mb-16 text-center">
-  <h2 class="text-sm uppercase text-stone-400 mb-4">
-    Планирани източници
-  </h2>
-
-  <div class="grid gap-3 sm:grid-cols-2 md:grid-cols-3">
-
-    <span class="source primary">imot.bg</span>
-    <span class="source primary">imoti.net</span>
-    <span class="source primary">address.bg</span>
-    <span class="source primary">homes.bg</span>
-
-    <span class="source">olx.bg</span>
-    <span class="source">bazar.bg</span>
-
-    <span class="source">imoti.bg</span>
-    <span class="source">realestates.bg</span>
-    <span class="source">indomio.bg</span>
-
-    <span class="source">yavlena.com</span>
-    <span class="source">imoteka.bg</span>
-    <span class="source">era.bg</span>
-    <span class="source">bulgarianproperties.com</span>
-    <span class="source">property.bg</span>
-
-  </div>
-</div>
-
-</main>
+      <!-- FOOTER CTA -->
+      <section class="border-t border-stone-200 px-5 py-14 text-center">
+        <h2 id="footerTitle" class="serif mb-2 text-4xl font-light tracking-tight">Не пропускайте нито една обява</h2>
+        <p id="footerText" class="mb-7 text-sm font-light text-stone-400">Запишете се за ранен достъп.</p>
+        <div class="mt-10 text-xs tracking-wider text-stone-400">lozenetz.bg — Sofia, Bulgaria — 2026</div>
+      </section>
+    </div>
+  </main>
 
 <script>
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyVA0PmvlJ7rTHSTa-pnFOmN4yX0-0vFf4mF-J9gxTyRfjFnMGaZq2zd0svIQjDqn3S/exec";
+let currentLang = 'bg';
 
-const translations = {
+const t = {
   bg: {
-    title: "Всички нови имоти в Лозенец. Едно място.",
-    subtitle: "Получавайте новите обяви първи",
-    cta: "Запиши ме за ранен достъп →",
-    consent: "Съгласен съм да получавам известия",
-    success: "Благодарим!"
+    brandSub: "ИМОТИ", badge: "Очаквайте скоро", title: "Всички нови имоти в Лозенец. Едно място.", subtitle: "Автоматично събираме обявите от 20+ сайта, премахваме дубликатите и ви показваме само новото — преди всички останали.", email: "Вашият имейл", consent: "Съгласявам се да получавам известия за старта на услугата и нови имоти. Мога да се отпиша по всяко време.", cta: "Запиши ме за ранен достъп →", success: "Благодарим! Ще ви уведомим при старт.",
+    stat1: "средна цена/м²", stat2: "сайта с обяви", stat3: "преди останалите",
+    whatTitle: "Какво е Lozenetz.bg?", whatText: "Хиперлокална услуга за имоти в Лозенец. Вместо да проверявате десетки сайтове всеки ден, получавате една чиста, подредена и навременна картина на новите обяви в квартала.",
+    howTitle: "Как работи", step1Title: "Събираме", step1Text: "Следим основните сайтове за имоти и агенции с активни обяви в Лозенец.", step2Title: "Филтрираме", step2Text: "Премахваме дублирани обяви, нормализираме данните и показваме ключовите параметри ясно.", step3Title: "Известяваме", step3Text: "Получавате навременни известия по имейл и други удобни канали, когато има нови подходящи обяви.",
+    servicesTitle: "Какво ще включва услугата", service1Title: "Нови обяви", service1Text: "Подбран поток от нови продажби и наеми в Лозенец.", service2Title: "Дедупликация", service2Text: "Една и съща обява няма да ви се показва пет пъти от различни сайтове.", service3Title: "Известия", service3Text: "Ранни известия за нови обяви, които отговарят на интереса ви.", service4Title: "Пазарен контекст", service4Text: "Цена на м², сравнение с квартала и ориентир дали офертата изглежда разумна.",
+    sourcesTitle: "Планирани източници за наблюдение", sourcesIntro: "Ще следим основните портали, агенции и директни сайтове, които публикуват имоти в Лозенец, за да получите по-пълна картина на пазара.", mapTitle: "Фокус: Лозенец", mapText: "Услугата започва с ясно дефинирана зона в Лозенец, за да бъде максимално полезна за хора, които търсят конкретно в този квартал.", faqTitle: "Въпроси", faq1Q: "Какво точно прави Lozenetz.bg?", faq1A: "Събира новите обяви за имоти в Лозенец от множество източници и ги подрежда на едно място.", faq2Q: "Кога стартира услугата?", faq2A: "В момента подготвяме ранния достъп. Записаните потребители ще бъдат уведомени първи.", faq3Q: "Ще има ли известия?", faq3A: "Да — идеята е да получавате навременни известия по имейл и други удобни канали, без да проверявате ръчно десетки сайтове.", footerTitle: "Не пропускайте нито една обява", footerText: "Запишете се за ранен достъп."
   },
   en: {
-    title: "All new properties in Lozenets. One place.",
-    subtitle: "Be first to see new listings",
-    cta: "Get early access →",
-    consent: "I agree to receive updates",
-    success: "Thank you!"
+    brandSub: "PROPERTIES", badge: "Coming soon", title: "Every new property in Lozenets. One place.", subtitle: "We collect listings from 20+ sources, remove duplicates, and show you what is genuinely new — before everyone else.", email: "Your email", consent: "I agree to receive updates about launch and new property listings. I can unsubscribe anytime.", cta: "Get early access →", success: "Thank you! We'll notify you at launch.",
+    stat1: "average price/sqm", stat2: "listing sources", stat3: "ahead of others",
+    whatTitle: "What is Lozenetz.bg?", whatText: "A hyperlocal real estate intelligence service for Lozenets. Instead of checking dozens of websites every day, you get one clean, timely view of new listings in the neighborhood.",
+    howTitle: "How it works", step1Title: "Collect", step1Text: "We monitor the main property portals and agencies with active listings in Lozenets.", step2Title: "Filter", step2Text: "We remove duplicates, normalize the data, and present the key details clearly.", step3Title: "Notify", step3Text: "You receive timely alerts by email and other convenient channels when relevant new listings appear.",
+    servicesTitle: "What the service will include", service1Title: "New listings", service1Text: "A curated feed of new sales and rentals in Lozenets.", service2Title: "Deduplication", service2Text: "The same apartment will not appear five times from different sites.", service3Title: "Alerts", service3Text: "Early notifications for listings that match your interests.", service4Title: "Market context", service4Text: "Price per sqm, neighborhood comparison, and a sense of whether an offer looks reasonable.",
+    sourcesTitle: "Planned monitored sources", sourcesIntro: "We will monitor the main portals, agencies, and direct sites that publish properties in Lozenets, so you get a more complete view of the market.", mapTitle: "Focus: Lozenets", mapText: "The service starts with a clearly defined Lozenets area, so it is useful for people searching specifically in this neighborhood.", faqTitle: "Questions", faq1Q: "What exactly does Lozenetz.bg do?", faq1A: "It collects new property listings in Lozenets from multiple sources and organizes them in one place.", faq2Q: "When will the service launch?", faq2A: "We are preparing early access now. Registered users will be notified first.", faq3Q: "Will there be alerts?", faq3A: "Yes — the idea is to receive timely updates by email and other convenient channels without manually checking dozens of sites.", footerTitle: "Never miss a listing", footerText: "Sign up for early access."
   }
 };
 
-function setLang(lang){
-  const t = translations[lang];
-  document.getElementById('title').innerText = t.title;
-  document.getElementById('subtitle').innerText = t.subtitle;
-  document.getElementById('cta').innerText = t.cta;
-  document.getElementById('consentText').innerText = t.consent;
-  document.getElementById('successMessage').innerText = t.success;
+function setLang(lang) {
+  currentLang = lang;
+  const data = t[lang];
+  Object.keys(data).forEach((key) => {
+    const el = document.getElementById(key);
+    if (!el) return;
+    if (key === 'email') el.setAttribute('placeholder', data[key]);
+    else el.innerText = data[key];
+  });
+  document.documentElement.lang = lang;
+  document.getElementById('bgBtn').className = lang === 'bg' ? 'rounded-full bg-white px-3.5 py-1.5 text-stone-950 shadow-sm' : 'rounded-full px-3.5 py-1.5 text-stone-500';
+  document.getElementById('enBtn').className = lang === 'en' ? 'rounded-full bg-white px-3.5 py-1.5 text-stone-950 shadow-sm' : 'rounded-full px-3.5 py-1.5 text-stone-500';
 }
 
 document.getElementById('leadForm').addEventListener('submit', function(e) {
   e.preventDefault();
-
   fetch(SCRIPT_URL, {
     method: 'POST',
     body: new URLSearchParams({
       email: document.getElementById('email').value,
-      consent: 'yes',
-      language: 'bg',
+      consent: document.getElementById('consent').checked ? 'yes' : 'no',
+      language: currentLang,
       source: 'lozenetz.bg'
     })
   })
   .then(() => {
     document.getElementById('leadForm').reset();
     document.getElementById('successMessage').classList.remove('hidden');
+    document.getElementById('successMessage').innerText = t[currentLang].success;
+  })
+  .catch(() => alert(currentLang === 'bg' ? 'Грешка при изпращане' : 'Submission error'));
+});
+
+document.querySelectorAll('.faq-toggle').forEach((button) => {
+  button.addEventListener('click', () => {
+    const item = button.closest('.faq-item');
+    const answer = item.querySelector('.faq-answer');
+    const plus = item.querySelector('.faq-plus');
+    const isOpen = button.getAttribute('aria-expanded') === 'true';
+    button.setAttribute('aria-expanded', String(!isOpen));
+    answer.classList.toggle('hidden', isOpen);
+    plus.classList.toggle('rotate-45', !isOpen);
   });
 });
 </script>
-
 </body>
 </html>

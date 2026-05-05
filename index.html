@@ -109,8 +109,45 @@
 
       <!-- SOURCES -->
       <section class="mb-20 rounded-xl bg-stone-100 px-5 py-8 text-center">
-        <div id="sourcesTitle" class="mb-4 text-xs uppercase tracking-[0.18em] text-stone-400">Събираме от</div>
-        <div class="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm text-stone-600"><span>imot.bg</span><span>imoti.net</span><span>address.bg</span><span>homes.bg</span><span>holmes.bg</span><span>yavlena.com</span><span>olx.bg</span><span>suprimmo.net</span><span id="sourcesMore" class="text-stone-400">+12 още</span></div>
+        <div id="sourcesTitle" class="mb-4 text-xs uppercase tracking-[0.18em] text-stone-400">Планирани източници за наблюдение</div>
+        <p id="sourcesIntro" class="mx-auto mb-7 max-w-2xl text-sm font-light leading-6 text-stone-600">Ще следим основните портали, агенции и директни сайтове, които публикуват имоти в Лозенец, за да получите по-пълна картина на пазара.</p>
+        <div class="grid gap-2 text-sm text-stone-700 sm:grid-cols-2 md:grid-cols-3">
+          <span class="rounded-lg bg-white/70 px-3 py-2">imot.bg</span>
+          <span class="rounded-lg bg-white/70 px-3 py-2">imoti.net</span>
+          <span class="rounded-lg bg-white/70 px-3 py-2">address.bg</span>
+          <span class="rounded-lg bg-white/70 px-3 py-2">homes.bg</span>
+          <span class="rounded-lg bg-white/70 px-3 py-2">holmes.bg</span>
+          <span class="rounded-lg bg-white/70 px-3 py-2">yavlena.com</span>
+          <span class="rounded-lg bg-white/70 px-3 py-2">imoteka.bg</span>
+          <span class="rounded-lg bg-white/70 px-3 py-2">era.bg</span>
+          <span class="rounded-lg bg-white/70 px-3 py-2">suprimmo.net</span>
+          <span class="rounded-lg bg-white/70 px-3 py-2">property.bg</span>
+          <span class="rounded-lg bg-white/70 px-3 py-2">olx.bg</span>
+          <span class="rounded-lg bg-white/70 px-3 py-2">bazar.bg</span>
+          <span class="rounded-lg bg-white/70 px-3 py-2">realestates.bg</span>
+          <span class="rounded-lg bg-white/70 px-3 py-2">imoti.bg</span>
+          <span class="rounded-lg bg-white/70 px-3 py-2">indomio.bg</span>
+          <span class="rounded-lg bg-white/70 px-3 py-2">luximmo.com</span>
+          <span class="rounded-lg bg-white/70 px-3 py-2">bulgarianproperties.com</span>
+          <span class="rounded-lg bg-white/70 px-3 py-2">topimot.com</span>
+          <span class="rounded-lg bg-white/70 px-3 py-2">realistimo.com</span>
+          <span class="rounded-lg bg-white/70 px-3 py-2">arcoreal.com</span>
+          <span class="rounded-lg bg-white/70 px-3 py-2">forton.bg</span>
+          <span class="rounded-lg bg-white/70 px-3 py-2">mirela.bg</span>
+        </div>
+      </section>
+
+      <!-- MAP -->
+      <section class="mb-20 overflow-hidden rounded-xl border border-stone-200 bg-white/40">
+        <div class="px-6 py-8 text-center">
+          <h2 id="mapTitle" class="serif mb-3 text-4xl font-light tracking-tight">Фокус: Лозенец</h2>
+          <p id="mapText" class="mx-auto max-w-2xl text-sm font-light leading-6 text-stone-600">Услугата започва с ясно дефинирана зона в Лозенец, за да бъде максимално полезна за хора, които търсят конкретно в този квартал.</p>
+        </div>
+        <iframe
+          title="Lozenets map"
+          class="h-[360px] w-full border-0"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=23.3000%2C42.6650%2C23.3400%2C42.6900&layer=mapnik&marker=42.6755%2C23.3190">
+        </iframe>
       </section>
 
       <!-- FAQ -->
@@ -150,7 +187,7 @@ const t = {
     whatTitle: "Какво е Lozenetz.bg?", whatText: "Хиперлокална услуга за имоти в Лозенец. Вместо да проверявате десетки сайтове всеки ден, получавате една чиста, подредена и навременна картина на новите обяви в квартала.",
     howTitle: "Как работи", step1Title: "Събираме", step1Text: "Следим основните сайтове за имоти и агенции с активни обяви в Лозенец.", step2Title: "Филтрираме", step2Text: "Премахваме дублирани обяви, нормализираме данните и показваме ключовите параметри ясно.", step3Title: "Известяваме", step3Text: "Получавате навременни известия по имейл и други удобни канали, когато има нови подходящи обяви.",
     servicesTitle: "Какво ще включва услугата", service1Title: "Нови обяви", service1Text: "Подбран поток от нови продажби и наеми в Лозенец.", service2Title: "Дедупликация", service2Text: "Една и съща обява няма да ви се показва пет пъти от различни сайтове.", service3Title: "Известия", service3Text: "Ранни известия за нови обяви, които отговарят на интереса ви.", service4Title: "Пазарен контекст", service4Text: "Цена на м², сравнение с квартала и ориентир дали офертата изглежда разумна.",
-    sourcesTitle: "Събираме от", sourcesMore: "+12 още", faqTitle: "Въпроси", faq1Q: "Какво точно прави Lozenetz.bg?", faq1A: "Събира новите обяви за имоти в Лозенец от множество източници и ги подрежда на едно място.", faq2Q: "Кога стартира услугата?", faq2A: "В момента подготвяме ранния достъп. Записаните потребители ще бъдат уведомени първи.", faq3Q: "Ще има ли известия?", faq3A: "Да — идеята е да получавате навременни известия по имейл и други удобни канали, без да проверявате ръчно десетки сайтове.", footerTitle: "Не пропускайте нито една обява", footerText: "Запишете се за ранен достъп."
+    sourcesTitle: "Планирани източници за наблюдение", sourcesIntro: "Ще следим основните портали, агенции и директни сайтове, които публикуват имоти в Лозенец, за да получите по-пълна картина на пазара.", mapTitle: "Фокус: Лозенец", mapText: "Услугата започва с ясно дефинирана зона в Лозенец, за да бъде максимално полезна за хора, които търсят конкретно в този квартал.", faqTitle: "Въпроси", faq1Q: "Какво точно прави Lozenetz.bg?", faq1A: "Събира новите обяви за имоти в Лозенец от множество източници и ги подрежда на едно място.", faq2Q: "Кога стартира услугата?", faq2A: "В момента подготвяме ранния достъп. Записаните потребители ще бъдат уведомени първи.", faq3Q: "Ще има ли известия?", faq3A: "Да — идеята е да получавате навременни известия по имейл и други удобни канали, без да проверявате ръчно десетки сайтове.", footerTitle: "Не пропускайте нито една обява", footerText: "Запишете се за ранен достъп."
   },
   en: {
     brandSub: "PROPERTIES", badge: "Coming soon", title: "Every new property in Lozenets. One place.", subtitle: "We collect listings from 20+ sources, remove duplicates, and show you what is genuinely new — before everyone else.", email: "Your email", consent: "I agree to receive updates about launch and new property listings. I can unsubscribe anytime.", cta: "Get early access →", success: "Thank you! We'll notify you at launch.",
@@ -158,7 +195,7 @@ const t = {
     whatTitle: "What is Lozenetz.bg?", whatText: "A hyperlocal real estate intelligence service for Lozenets. Instead of checking dozens of websites every day, you get one clean, timely view of new listings in the neighborhood.",
     howTitle: "How it works", step1Title: "Collect", step1Text: "We monitor the main property portals and agencies with active listings in Lozenets.", step2Title: "Filter", step2Text: "We remove duplicates, normalize the data, and present the key details clearly.", step3Title: "Notify", step3Text: "You receive timely alerts by email and other convenient channels when relevant new listings appear.",
     servicesTitle: "What the service will include", service1Title: "New listings", service1Text: "A curated feed of new sales and rentals in Lozenets.", service2Title: "Deduplication", service2Text: "The same apartment will not appear five times from different sites.", service3Title: "Alerts", service3Text: "Early notifications for listings that match your interests.", service4Title: "Market context", service4Text: "Price per sqm, neighborhood comparison, and a sense of whether an offer looks reasonable.",
-    sourcesTitle: "We aggregate from", sourcesMore: "+12 more", faqTitle: "Questions", faq1Q: "What exactly does Lozenetz.bg do?", faq1A: "It collects new property listings in Lozenets from multiple sources and organizes them in one place.", faq2Q: "When will the service launch?", faq2A: "We are preparing early access now. Registered users will be notified first.", faq3Q: "Will there be alerts?", faq3A: "Yes — the idea is to receive timely updates by email and other convenient channels without manually checking dozens of sites.", footerTitle: "Never miss a listing", footerText: "Sign up for early access."
+    sourcesTitle: "Planned monitored sources", sourcesIntro: "We will monitor the main portals, agencies, and direct sites that publish properties in Lozenets, so you get a more complete view of the market.", mapTitle: "Focus: Lozenets", mapText: "The service starts with a clearly defined Lozenets area, so it is useful for people searching specifically in this neighborhood.", faqTitle: "Questions", faq1Q: "What exactly does Lozenetz.bg do?", faq1A: "It collects new property listings in Lozenets from multiple sources and organizes them in one place.", faq2Q: "When will the service launch?", faq2A: "We are preparing early access now. Registered users will be notified first.", faq3Q: "Will there be alerts?", faq3A: "Yes — the idea is to receive timely updates by email and other convenient channels without manually checking dozens of sites.", footerTitle: "Never miss a listing", footerText: "Sign up for early access."
   }
 };
 
